@@ -530,3 +530,17 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 75ms (Views: 72.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2017-02-23 13:38:58 -0800
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (1.6ms)
+Started GET "/" for ::1 at 2017-02-23 13:38:58 -0800
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 142ms (Views: 139.4ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 348ms (Views: 336.2ms | ActiveRecord: 0.0ms)
+
+
