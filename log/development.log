@@ -2224,3 +2224,88 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 31ms (Views: 28.0ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/" for ::1 at 2017-02-28 13:49:19 -0800
+Started GET "/" for ::1 at 2017-02-28 13:49:20 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (24.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (6.8ms)
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (28.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (28.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 340ms (Views: 274.5ms | ActiveRecord: 55.0ms)
+
+
+Completed 200 OK in 338ms (Views: 277.8ms | ActiveRecord: 54.1ms)
+
+
+Started GET "/" for ::1 at 2017-02-28 13:52:13 -0800
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 22ms (Views: 17.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/logout" for ::1 at 2017-02-28 13:52:17 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-02-28 13:52:17 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2017-02-28 13:52:22 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mBusiness Load (14.2ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses" ORDER BY "businesses"."company" ASC[0m
+  Rendered users/new.html.erb within layouts/application (47.0ms)
+Completed 200 OK in 92ms (Views: 57.4ms | ActiveRecord: 17.8ms)
+
+
+Started GET "/login" for ::1 at 2017-02-28 13:53:13 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-02-28 13:53:31 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DG5gwkg2JhhLqy8lD/qKYBa3Px0pJV0yruD8d6ymOYyUVGlZ0+RZDtzWfV9B+NmzFFG4cRSTqCz4l7BSIMxDyg==", "email"=>"joet@mckenzieglass.net", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "joet@mckenzieglass.net"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 63ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/users/3" for ::1 at 2017-02-28 13:53:31 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 23.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/logout" for ::1 at 2017-02-28 13:53:43 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-02-28 13:53:43 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 24ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+

@@ -9,6 +9,21 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-default">
+       <div class="container-fluid">
+         <div class="navbar-header">
+     <% if current_user %>
+       <%= "Logged in as #{current_user.username}"%>
+       <span class="icon-bar"><%= link_to "logout", logout_path %></span>
+
+     <% else %>
+       <span class="icon-bar"><%= link_to "Log in", login_path %></span>
+       <span class="icon-bar"><%= link_to "Sign Up", new_user_path %></span>
+     <% end %>
+
+   </div>
+   </div>
+   </nav>
     <%= yield %>
   </body>
 </html>
