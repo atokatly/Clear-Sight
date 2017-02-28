@@ -1,0 +1,9 @@
+<h1 class="panel-title">Login</h1>
+
+<%= form_tag '/login' do %>
+  <div class="panel-body">
+    Email: <%= text_field_tag :email %>
+    Password: <%= password_field_tag :password %>
+    <%= submit_tag "Submit" %>
+  </div>
+<% end %>
