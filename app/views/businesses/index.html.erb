@@ -1,7 +1,8 @@
 <h1>List of Businesses</h1>
   <ul>
     <%@business.each do |business|%>
-    <li><%= link_to "#{business.company}", business_path(business.id)%>
+      <li>
+        <%= link_to "#{business.company}", business_path(business.id)%>
       </li>
     <%end%>
   </ul>

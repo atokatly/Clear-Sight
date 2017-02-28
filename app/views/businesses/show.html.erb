@@ -1,1 +1,9 @@
 <h1>Welcome to the <%=@business.company%> homepage.</h1>
+<p>Employees:</p>
+<ul>
+  <%@business.users.each do |employee| %>
+    <li>
+      <%=link_to "#{employee.f_name} #{employee.l_name} -- #{employee.title}", user_path(employee.id)%>
+    </li>
+  <%end%>
+</ul>
