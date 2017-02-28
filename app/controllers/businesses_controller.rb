@@ -1,6 +1,6 @@
 class BusinessesController < ApplicationController
   def index
-
+    @business = Business.all
   end
 
   def new
@@ -21,6 +21,10 @@ class BusinessesController < ApplicationController
     else
       redirect_to new_user_path
     end
+  end
+
+  def show
+    @business = Business.find(params[:id])
   end
 
 
