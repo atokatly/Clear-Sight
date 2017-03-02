@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+50.times { |i| Job.create(title: "Job #{i}", description: BetterLorem.p(5, false, false), address: "123 Lane", company_field: "Construction") }

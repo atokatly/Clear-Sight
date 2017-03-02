@@ -14,7 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= require users 
+//= require users
+//= require bootstrap
 
 $('.form').find('input, textarea').on('keyup blur focus', function (e) {
   console.log("I'm listening")

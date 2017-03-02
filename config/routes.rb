@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "users#index"
   resources :users
   resources :businesses 
+  resources :jobs, only: [:index, :show]
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

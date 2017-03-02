@@ -36,6 +36,11 @@ gem 'compass-rails'
 
 gem 'compass'
 
+gem 'will_paginate', '~> 3.0.5'
+gem 'betterlorem', '~> 0.1.2'
+gem 'bootstrap-sass', '~> 3.0.3.0'
+gem 'bootstrap-will_paginate', '~> 0.0.10'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
