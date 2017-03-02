@@ -37,6 +37,8 @@
 
         <%= users_form.label :business_title %>
         <%= users_form.text_field :title %>
+
+        <%= users_form.collection_select :company, Business.order(:company),:id,:company, include_blank: true %>
       </li>
     <% end %>
   </ul>
