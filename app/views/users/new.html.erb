@@ -1,15 +1,4 @@
 <%= form_for @business do |f| %>
-  Business Name(Select from drop-down or enter new business below): <%= f.collection_select :company, Business.order(:company),:id,:company, include_blank: true %>
-  <br>
-  <%=f.label :company_name%>
-  <%=f.text_field :company %>
-  <%=f.label :company_field %>
-  <%=f.text_field :company_field %>
-  <%=f.label :phone_number%>
-  <%=f.text_field :phone_bus %>
-  <%=f.label :address %>
-  <%=f.text_field :address %>
-  <p>
   User Info:
   <ul>
     <%= f.fields_for :users do |users_form| %>
@@ -38,10 +27,20 @@
         <%= users_form.label :business_title %>
         <%= users_form.text_field :title %>
 
-        <%= users_form.collection_select :company, Business.order(:company),:id,:company, include_blank: true %>
+        Company<%= users_form.collection_select :company, Business.order(:company),:id,:company, include_blank: true %>
         <br>
       </li>
     <% end %>
   </ul>
+  <br>Business Info:
+    <%=f.label :company_name%>
+    <%=f.text_field :company %>
+    <%=f.label :company_field %>
+    <%=f.text_field :company_field %>
+    <%=f.label :phone_number%>
+    <%=f.text_field :phone_bus %>
+    <%=f.label :address %>
+    <%=f.text_field :address %>
+  <p>
   <%= f.submit "Submit" %>
 <% end %>
