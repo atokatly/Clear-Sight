@@ -1,0 +1,7 @@
+<div>
+  <h2><%= link_to @jobs, post_path(@jobs) %></h2>
+
+  <small><em><%= job.timestamp %></em></small>
+
+  <p><%= truncate(strip_tags(job.description), length: 600) %></p>
+</div>
