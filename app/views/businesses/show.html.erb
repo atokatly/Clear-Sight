@@ -7,3 +7,13 @@
     </li>
   <%end%>
 </ul>
+<p>Current Jobs:</p>
+<ul>
+  <%@business.users.each do |user| %>
+  <%user.jobs.each do |job|%>
+    <li><p><%=job%></p>
+      <%= link_to "#{job.title}", job_path(job.id)%>
+    </li>
+    <%end%>
+    <%end%>
+  </ul>
