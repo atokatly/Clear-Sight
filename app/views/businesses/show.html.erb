@@ -11,7 +11,7 @@
 <ul>
   <%@business.users.each do |user| %>
   <%user.jobs.each do |job|%>
-    <li><p><%=job%></p>
+    <li>
       <%= link_to "#{job.title}", job_path(job.id)%>
     </li>
     <%end%>
