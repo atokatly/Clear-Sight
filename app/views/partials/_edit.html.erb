@@ -1,0 +1,27 @@
+<%= form_for @user do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :f_name %>
+
+  <%= f.label :last_name %>
+  <%= f.text_field :l_name %>
+
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone %>
+
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+
+  <%= f.label :business_title %>
+  <%= f.text_field :title %>
+
+  <%= f.submit "Submit" %>
+<%end%>

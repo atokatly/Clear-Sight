@@ -1,0 +1,8 @@
+<%if current_user == @user %>
+  <%= render "/partials/edit" %>
+<%else%>
+  Sorry, this is not your page to edit.
+  <br>
+  <%= link_to "Edit Account", edit_user_path(current_user)%> <br>
+  <%= link_to "My Profile", user_path(current_user)%>
+<%end%>
