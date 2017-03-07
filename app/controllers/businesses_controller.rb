@@ -32,6 +32,18 @@ class BusinessesController < ApplicationController
     @business = Business.find_by(id: params[:id])
   end
 
+  def edit
+
+  end
+
+  def update
+
+  end
+
+  def destroy
+
+  end
+
   private
 
   def user_params

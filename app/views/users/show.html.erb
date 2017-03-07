@@ -1,3 +1,10 @@
-<h1>Hi <%=@user.f_name%></h1>
-<p>Welcome to your home page!</p>
-<p>Go to <%= link_to "Company Page", business_path(@user.business_id)%></p>
+<%if current_user == @user%>
+  <h1>Hi <%=@user.f_name%></h1>
+  <p>Welcome to your home page!</p>
+  <p>Go to <%= link_to "Company Page", business_path(@user.business_id)%></p>
+  <%= link_to "Edit Account", edit_user_path(@user) %>
+  <%= link_to 'Delete Account', user_path(@user), method: :delete, data: {confirm: "Really delete your account?"}%>
+<%else%>
+  <h1>This is the home page for <%=@user.f_name%> <%=@user.l_name%></h1>
+  <p>Go to <%= link_to "Company Page", business_path(@user.business_id)%></p>
+<%end%>
