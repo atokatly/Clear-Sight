@@ -1,0 +1,6 @@
+<%if @job.user_id == @user.id %>
+  <%= render "/jobs/edit" %>
+<%else%>
+  Sorry, only the job owner can change this posting.<br>
+  <%= link_to "My Profile", user_path(current_user)%>
+<%end%>

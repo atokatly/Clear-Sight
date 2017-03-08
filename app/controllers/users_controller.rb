@@ -29,9 +29,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    p "*" * 10
-    p params
-    p params[:id]
     @user = User.find_by(id: params[:id].to_i)
     @user.update(user_params)
 
