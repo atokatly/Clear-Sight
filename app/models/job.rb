@@ -9,9 +9,9 @@ class Job < ApplicationRecord
       created_at.strftime('%d %B %Y %H:%M:%S')
     end
 
-    def description
-      @description
-    end
+    # def description
+    #   @description
+    # end
 
 
 end

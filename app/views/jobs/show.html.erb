@@ -1,1 +1,9 @@
-<h1>Welcome to post<%=@jobs.id%></h1>
+<h1>Welcome to post<%=@job.id%></h1>
+<p>Title: <%=@job.title %></p>
+<p>Description: <%=@job.description %></p>
+<%if @job.user_id == @user.id %>
+  <p>Options:</p>
+  <%= link_to 'Create Task', new_task_path %>
+  <%= link_to 'Edit Job', edit_job_path(@job)%>
+  <%= link_to 'Delete Job', job_path(@job), method: :delete, data: {confirm: "Really delete this job?"}%>
+<%end%>

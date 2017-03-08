@@ -2,6 +2,8 @@
   <h1>Hi <%=@user.f_name%></h1>
   <p>Welcome to your home page!</p>
   <p>Go to <%= link_to "Company Page", business_path(@user.business_id)%></p>
+  <p>Options:</p>
+  <%= link_to "Create New Job", new_job_path%>
   <%= link_to "Edit Account", edit_user_path(@user) %>
   <%= link_to 'Delete Account', user_path(@user), method: :delete, data: {confirm: "Really delete your account?"}%>
 <%else%>
