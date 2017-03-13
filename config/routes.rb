@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   root to: "users#index"
   resources :users
   resources :businesses
-  resources :jobs
-  resources :tasks
+  resources :jobs do
+    resources :tasks
+  end
+
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

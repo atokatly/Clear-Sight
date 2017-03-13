@@ -24,6 +24,7 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
     @owner = User.find_by(id: @job.user_id)
     @business = Business.find_by(id: @owner.business_id)
+    @tasks = @job.tasks 
   end
 
   def edit
