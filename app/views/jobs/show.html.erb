@@ -3,9 +3,16 @@
 <p>Description: <%=@job.description %></p>
 <p>Company: <%=link_to "#{@business.company}", business_path(@business) %></p>
 <p>Job Creator: <%=link_to "#{@owner.f_name} #{@owner.l_name}", user_path(@owner)%></p>
+<p>Tasks:</p>
+<ul>
+  <%@tasks.each do |task| %>
+    <li><%=link_to "#{task.title}", task_path(task)%></li>
+  <%end%>
+</ul>
+
 <%if @job.user_id == @user.id %>
   <p>Options:</p>
-  <%= link_to 'Create Task', new_task_path %>
+  <%= link_to 'Create Task', new_job_task_path(@job) %>
   <%= link_to 'Edit Job', edit_job_path(@job)%>
   <%= link_to 'Delete Job', job_path(@job), method: :delete, data: {confirm: "Really delete this job?"}%>
 <%end%>
