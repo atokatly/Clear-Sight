@@ -1,6 +1,8 @@
 <h1>Welcome to post<%=@job.id%></h1>
 <p>Title: <%=@job.title %></p>
 <p>Description: <%=@job.description %></p>
+<p>Company: <%=link_to "#{@business.company}", business_path(@business) %></p>
+<p>Job Creator: <%=link_to "#{@owner.f_name} #{@owner.l_name}", user_path(@owner)%></p>
 <%if @job.user_id == @user.id %>
   <p>Options:</p>
   <%= link_to 'Create Task', new_task_path %>
