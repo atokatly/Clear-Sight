@@ -2,6 +2,12 @@
   <h1>Hi <%=@user.f_name%></h1>
   <p>Welcome to your home page!</p>
   <p>Go to <%= link_to "Company Page", business_path(@user.business_id)%></p>
+  <p>Current Jobs:</p>
+  <ul>
+    <%@jobs.each do |job| %>
+      <li><%= link_to "#{job.title}", job_path(job) %></li>
+    <%end%>
+  </ul>
   <p>Options:</p>
   <%= link_to "Create New Job", new_job_path%>
   <%= link_to "Edit Account", edit_user_path(@user) %>

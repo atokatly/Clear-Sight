@@ -22,6 +22,8 @@ class JobsController < ApplicationController
   def show
     @user = User.find_by(id: session[:user_id])
     @job = Job.find(params[:id])
+    @owner = User.find_by(id: @job.user_id)
+    @business = Business.find_by(id: @owner.business_id)
   end
 
   def edit
