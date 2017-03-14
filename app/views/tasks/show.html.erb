@@ -1,0 +1,4 @@
+<h1>Task: <%=@task.title%></h1>
+<p>Task owner: <%= link_to "#{@user.f_name} #{@user.l_name}", user_path(@user) %></p>
+<p>Job: <%= link_to "#{@job.title}", job_path(@job)%></p>
+<p>Description: <%=@task.description%></p>

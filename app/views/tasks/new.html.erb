@@ -1,1 +1,10 @@
-<h1>New Task</h1>
+<h1>Create Task</h1>
+<%=form_for([@job,@task]) do |f| %>
+  <%=f.label :task_title%>
+  <%=f.text_field :title %>
+  <%=f.label :task_description %>
+  <%=f.text_area :description %>
+  <%=f.hidden_field :job_id, value: params[:job_id] %>
+  <%=f.hidden_field :user_id, value: session[:user_id]%>
+  <%=f.submit "Create" %>
+<%end%>

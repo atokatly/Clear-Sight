@@ -22,7 +22,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @jobs = @user.jobs 
+    @jobs = @user.jobs
+    @tasks = @user.tasks 
   end
 
   def edit
