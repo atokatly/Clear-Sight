@@ -23,6 +23,7 @@ class TasksController < ApplicationController
     @task = Task.find_by(id: params[:id])
     @user = User.find_by(id: @task.user_id)
     @job = Job.find_by(id: params[:job_id])
+    @comments = @task.comments 
   end
 
   def edit
