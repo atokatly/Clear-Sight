@@ -1,0 +1,9 @@
+<h1>Add a comment</h1>
+<%=form_for([@job,@task,@comment]) do |f| %>
+  <%=f.label :comment %>
+  <%=f.text_area :comment %>
+  <%=f.hidden_field :user_id, value: session[:user_id] %>
+  <%=f.hidden_field :job_id, value: @job.id%>
+  <%=f.hidden_field :task_id, value: @task.id%>
+  <%=f.submit "Create" %>
+<%end%>
