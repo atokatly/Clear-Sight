@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :users
   resources :businesses
   resources :jobs do
-    resources :tasks
+    resources :tasks do
+      resources :comments, shallow: true 
+    end
   end
 
 
