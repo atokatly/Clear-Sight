@@ -43,7 +43,14 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-
+    @comment = Comment.find_by(id: params[:id])
+    @job = @comment.task.job
+    @task = @comment.task
+    if @comment.destroy
+      redirect_to job_task_path(@job, @task)
+    else
+      @errors = "Unable to destroy comment"
+    end
   end
 
   private
