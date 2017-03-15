@@ -13,7 +13,7 @@ class TasksController < ApplicationController
     @job = Job.find_by(id: params[:job_id])
     @task = Task.new(task_params)
     if @task.save
-      redirect_to job_task_path(@job,@task)
+      redirect_to job_task_path(@job, @task)
     else
       redirect_to new_job_task_path
     end
@@ -23,7 +23,7 @@ class TasksController < ApplicationController
     @task = Task.find_by(id: params[:id])
     @user = User.find_by(id: @task.user_id)
     @job = Job.find_by(id: params[:job_id])
-    @comments = @task.comments 
+    @comments = @task.comments
   end
 
   def edit
