@@ -14,7 +14,8 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      redirect_to comment_path(@comment)
+      # redirect_to comment_path(@comment)
+      redirect_to job_task_path(@comment.task.job,@comment.task)
     else
       redirect_to new_job_task_comment_path
     end
@@ -26,15 +27,30 @@ class CommentsController < ApplicationController
   end
 
   def edit
-
+    @comment = Comment.find_by(id: params[:id])
+    @job = Job.find_by(id: @comment.job_id)
+    @task = Task.find_by(id: @comment.task_id)
   end
 
   def update
-
+    p params
+    @comment = Comment.find_by(id: params[:id])
+    if @comment.update(comment_params)
+      redirect_to job_task_path(@comment.task.job,@comment.task)
+    else
+      redirect_to edit_comment_path
+    end
   end
 
   def destroy
-
+    @comment = Comment.find_by(id: params[:id])
+    @job = @comment.task.job
+    @task = @comment.task
+    if @comment.destroy
+      redirect_to job_task_path(@job, @task)
+    else
+      @errors = "Unable to destroy comment"
+    end
   end
 
   private
