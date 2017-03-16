@@ -10,7 +10,8 @@
   <%end%>
 </ul>
 
-<%if @job.user_id == @user.id %>
+
+<%if @business == @user.business %>
   <p>Options:</p>
   <%= link_to 'Create Task', new_job_task_path(@job) %>
   <%= link_to 'Edit Job', edit_job_path(@job)%>
