@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   resources :businesses
   resources :jobs do
     resources :tasks do
-      resources :comments, shallow: true 
+      resources :comments, shallow: true
     end
   end
-
+  resources :answers, only: [:new, :create, :edit, :update, :destroy]
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
