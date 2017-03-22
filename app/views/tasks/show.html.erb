@@ -5,11 +5,13 @@
 <div class="comment">
 <p>Comments: </p>
   <%@comments.each do |comment| %>
-    <%if current_user == comment.user %>
-    <p><%=link_to "#{comment.user.f_name} #{comment.user.l_name}", user_path(comment.user)%>: <%=comment.comment %> <%=link_to "Edit", edit_comment_path(comment)%> <%= link_to 'Delete', comment_path(comment), method: :delete, data: {confirm: "Really delete this comment?"}%> <%=link_to "Reply", new_answer_path(comment.answers.new)%></p>
-    <%else%>
-    <p><%=link_to "#{comment.user.f_name} #{comment.user.l_name}", user_path(comment.user)%>: <%=comment.comment %> <%=link_to "Reply", new_answer_path(comment.answers.new)%></p>
-    <%end%>
+      
+      <p><%=link_to "#{comment.user.f_name} #{comment.user.l_name}", user_path(comment.user)%>: <%=comment.comment %> <%=link_to "Edit", edit_comment_path(comment)%> <%= link_to 'Delete', comment_path(comment), method: :delete, data: {confirm: "Really delete this comment?"}%> <%=link_to "Reply", new_answer_path(comment)%></p>
+      <p><%=link_to "#{reply.user.f_name} #{reply.user.l_name}", user_path(reply.user)%>: <%=reply.answer%>
+
+      <p><%=link_to "#{comment.user.f_name} #{comment.user.l_name}", user_path(comment.user)%>: <%=comment.comment %> <%=link_to "Reply", new_answer_path(comment)%></p>
+      <p><%=link_to "#{reply.user.f_name} #{reply.user.l_name}", user_path(reply.user)%>: <%=reply.answer%>
+
   <%end%>
   <%if @user.business == current_user.business %>
     <%=link_to "Add comment", new_job_task_comment_path(@job,@task)%>
