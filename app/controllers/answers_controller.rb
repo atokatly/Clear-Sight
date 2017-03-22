@@ -14,15 +14,26 @@ class AnswersController < ApplicationController
   end
 
   def edit
-
+    @answer = Answer.find_by(id: params[:id])
   end
 
   def update
-
+    @answer = Answer.find_by(id: params[:id])
+    if @answer.update(answer_params)
+      redirect_to job_task_path(@answer.comment.task.job, @answer.comment.task)
+    else
+      redirect_to edit_answer_path
+    end
   end
 
   def destroy
-
+    @answer = Answer.find_by(id: params[:id])
+    if @answer.destroy
+      redirect_to job_task_path(@answer.comment.task.job, @answer.comment.task)
+    else
+      @errors = "Failed to delete answer"
+      redirect_to job_task_path(@answer.comment.task.job, @answer.comment.task)
+    end 
   end
 
   private
