@@ -2,6 +2,6 @@
   <%=f.label :comment %>
   <%=f.text_area :answer %>
   <%=f.hidden_field :user_id, value: session[:user_id] %>
-  <%=f.hidden_field :comment_id, value: @answer.comment_id%>
-  <%=f.submit "Edit Comment" %>
+  <%=f.hidden_field :comment_id, value: params[:format]%>
+  <%=f.submit "Create Comment" %>
 <%end%>
