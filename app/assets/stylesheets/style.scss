@@ -1,3 +1,54 @@
+body {
+
+}
+
+.menu-buttons {
+  vertical-align: middle;
+  display: inline-block;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+div.menu-div {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 10px;
+}
+
+.content {
+  text-align: center;
+  border:2px solid blue;
+  width:83%;
+  margin:10px 0 10px 190px;
+  min-height:500px;
+  _height:500px;
+  padding: 10px;
+}
+
+div#header {
+  border:2px solid red;
+  width: 100%;
+  height: 30px;
+  padding: 10px;
+}
+
+div#menu {
+  border:2px solid green;
+  width: 13%;
+  float:left;
+  margin:10px 0 10px 5px;
+  height:500px;
+  padding: 10px;
+}
+
+div#footer {
+  border:2px solid red;
+  width:100%;
+  height:30px;
+  padding: 10px;
+}
+
 // @import "compass/css3";
 //
 // $body-bg: #c1bdba;
