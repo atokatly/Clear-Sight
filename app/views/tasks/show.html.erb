@@ -1,18 +1,27 @@
-<h1>Task: <%=@task.title%></h1>
-<p>Task owner: <%= link_to "#{@user.f_name} #{@user.l_name}", user_path(@user) %></p>
-<p>Job: <%= link_to "#{@job.title}", job_path(@job)%></p>
-<p>Description: <%=@task.description%></p>
-<div class="comment">
-<p>Comments: </p>
-  <%@comments.each do |comment| %>
-    <p><%=link_to "#{comment.user.f_name} #{comment.user.l_name}", user_path(comment.user)%>: <%=comment.comment %> <%if current_user == comment.user%> <%=link_to "Edit", edit_comment_path(comment)%> <%= link_to 'Delete', comment_path(comment), method: :delete, data: {confirm: "Really delete this comment?"}%> <%=link_to "Reply", new_answer_path(comment)%> <%else%> <%=link_to "Reply", new_answer_path(comment)%> <%end%></p>
-    <%@answers.each do |reply| %>
-      <%if comment.id == reply.comment_id %>
-      <p><%=link_to "#{reply.user.f_name} #{reply.user.l_name}", user_path(reply.user)%>: <%=reply.answer %> <%if current_user == reply.user%> <%=link_to "Edit", edit_answer_path(reply)%> <%=link_to 'Delete', answer_path(reply), method: :delete, data: {confirm: "Really delete this comment?"}%> <%=link_to "Reply", new_answer_path(comment)%><%else%> <%=link_to "Reply", new_answer_path(comment)%><%end%> </p>
+<div id="menu">
+  <div class="menu-div">
+    <button id="all-jobs-button" class="menu-buttons">All Jobs</button>
+    <button id="jobs-button" class="menu-buttons">Jobs</button>
+    <button id="account-button" class="menu-buttons">Account</button>
+  </div>
+</div>
+<div class="content">
+  <h1>Task: <%=@task.title%></h1>
+  <p>Task owner: <%= link_to "#{@user.f_name} #{@user.l_name}", user_path(@user) %></p>
+  <p>Job: <%= link_to "#{@job.title}", job_path(@job)%></p>
+  <p>Description: <%=@task.description%></p>
+  <div class="comment">
+  <p>Comments: </p>
+    <%@comments.each do |comment| %>
+      <p><%=link_to "#{comment.user.f_name} #{comment.user.l_name}", user_path(comment.user)%>: <%=comment.comment %> <%if current_user == comment.user%> <%=link_to "Edit", edit_comment_path(comment)%> <%= link_to 'Delete', comment_path(comment), method: :delete, data: {confirm: "Really delete this comment?"}%> <%=link_to "Reply", new_answer_path(comment)%> <%else%> <%=link_to "Reply", new_answer_path(comment)%> <%end%></p>
+      <%@answers.each do |reply| %>
+        <%if comment.id == reply.comment_id %>
+        <p><%=link_to "#{reply.user.f_name} #{reply.user.l_name}", user_path(reply.user)%>: <%=reply.answer %> <%if current_user == reply.user%> <%=link_to "Edit", edit_answer_path(reply)%> <%=link_to 'Delete', answer_path(reply), method: :delete, data: {confirm: "Really delete this comment?"}%> <%=link_to "Reply", new_answer_path(comment)%><%else%> <%=link_to "Reply", new_answer_path(comment)%><%end%> </p>
+        <%end%>
       <%end%>
     <%end%>
-  <%end%>
-  <%if @user.business == current_user.business %>
-    <%=link_to "Add comment", new_job_task_comment_path(@job,@task)%>
-  <%end%>
+    <%if @user.business == current_user.business %>
+      <%=link_to "Add comment", new_job_task_comment_path(@job,@task)%>
+    <%end%>
+  </div>
 </div>
