@@ -21,7 +21,7 @@
       <%end%>
     <%end%>
     <%if @user.business == current_user.business %>
-      <%=link_to "Add comment", new_job_task_comment_path(@job,@task)%>
+      <%=link_to "Add comment", new_job_task_comment_path(@job,@task), id: "add-comment"%>
     <%end%>
   </div>
 </div>
