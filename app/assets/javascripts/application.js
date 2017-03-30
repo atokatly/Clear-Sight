@@ -19,6 +19,16 @@
 
 $(document).ready(function() {
   console.log("I'm Listening!");
-
-
+  $('#all-jobs-button').on("click", function(event){
+    event.preventDefault();
+    var element = this;
+    console.log("You clicked me!");
+    console.log(element)
+    $.ajax({
+      url: "tasks#show",
+      method: "GET"
+    }).done(function(response){
+      console.log(response);
+    });
+  });
 });
