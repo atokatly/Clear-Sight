@@ -6,6 +6,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -21,7 +24,23 @@
          <span class="icon-bar"><%= link_to "Log in", login_path %></span>
          <span class="icon-bar"><%= link_to "Sign Up", new_user_path %></span>
        <% end %>
-
+       <ul id="multicol-menu" class="nav pull-right">
+        <li class="dropdown">
+            eam
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">MultiCol Menu <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li>
+                    <div class="row" style="width: 400px;">
+                        <ul class="list-unstyled col-md-4">
+                            <li><a href="/users/<%=session[:user_id]%>>"Personal Profile</a></li>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Job Board</a></li>
+                        </ul>
+                    </div>
+                </li>
+              </ul>
+          </li>
+        </ul>
      </div>
      </div>
      </nav>
