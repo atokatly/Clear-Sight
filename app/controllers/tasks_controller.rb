@@ -20,14 +20,21 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find_by(id: params[:id])
-    @user = User.find_by(id: @task.user_id)
-    @job = Job.find_by(id: params[:job_id])
-    @comments = @task.comments.order(created_at: :desc)
-    array = []
-    @comments.each {|task| array << task.id}
-    array
-    @answers = Answer.where(comment_id: array)
+    if request.xhr?
+      p "I'm an Ajax call"
+      @user = User.find_by(id: session[:user_id])
+      render "/tasks/all", layout: false
+    else
+      @task = Task.find_by(id: params[:id])
+      @user = User.find_by(id: @task.user_id)
+      @job = Job.find_by(id: params[:job_id])
+      @comments = @task.comments.order(created_at: :desc)
+      array = []
+      @comments.each {|task| array << task.id}
+      array
+      @answers = Answer.where(comment_id: array)
+      p "I'm a standard route"
+    end
   end
 
   def edit
