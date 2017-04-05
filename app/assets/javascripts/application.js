@@ -19,6 +19,8 @@
 
 $(document).ready(function() {
   console.log("I'm Listening!");
+  $('.dropdown-toggle').dropdown();
+  $('.navbar-toggler').collapse();
   $('#all-jobs-button').on("click", function(event){
     event.preventDefault();
     var element = this;
@@ -29,7 +31,7 @@ $(document).ready(function() {
       method: "GET"
     }).done(function(response){
       console.log(response);
-      $('#add-comment').append(response); 
+      $('#add-comment').append(response);
     });
   });
 });

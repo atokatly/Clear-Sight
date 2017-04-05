@@ -2,6 +2,10 @@ body {
 
 }
 
+.nav-item {
+  text-align: right;
+}
+
 .menu-buttons {
   vertical-align: middle;
   display: inline-block;
@@ -24,6 +28,21 @@ div.menu-div {
   min-height:500px;
   height:500px;
   padding: 10px;
+}
+
+.card-footer {
+  border-top: 1px solid;
+}
+
+.card-header {
+  border-bottom: 1px solid;
+}
+.demo-card {
+  border-style: solid;
+  border-width: thin;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 100px;
 }
 
 // div#header {
